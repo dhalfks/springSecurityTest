@@ -1,0 +1,5 @@
+package com.ezen.myweb.repository;
+
+public interface BFileDAO {
+
+}

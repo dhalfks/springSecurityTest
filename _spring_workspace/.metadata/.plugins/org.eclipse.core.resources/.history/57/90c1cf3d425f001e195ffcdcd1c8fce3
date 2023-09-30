@@ -1,0 +1,11 @@
+package com.ezen.myweb.security;
+
+import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+public class AuthMember extends User{
+
+	
+}

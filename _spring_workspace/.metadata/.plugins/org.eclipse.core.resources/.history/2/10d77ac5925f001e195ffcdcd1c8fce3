@@ -1,0 +1,21 @@
+//아이디 중복체크, 비밀번호 확인 포함
+const duplCheck = document.getElementById('dupleCheck');
+
+
+document.getElementById('rpwd').addEventListener('change',()=>{
+    const email = document.getElementById('email');
+    const nickName = document.getElementById('nickName');
+    const rpwd = document.getElementById('rpwd');
+    const pwd = document.getElementById('pwd');
+    document.getElementById('regBtn').disabled = true;
+    
+    if((email.value != null || email.value != "") && (nickName.value != null || nickName.value != "")){
+        console.log(email.value);
+        console.log(nickName.value);
+        if(rpwd.value === pwd.value){
+            console.log(rpwd.value);
+            console.log(pwd.value);
+            document.getElementById('regBtn').disabled = false;
+        }
+    }
+})

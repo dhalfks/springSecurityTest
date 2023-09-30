@@ -1,0 +1,21 @@
+package com.ezen.myweb.repository;
+
+import java.util.List;
+
+import com.ezen.myweb.domain.BFileVO;
+
+public interface BFileDAO {
+
+	int insertBFile(BFileVO bfvo);
+
+	List<BFileVO> selectListBFile(long bno);
+
+	long selectOneBno(String uuid);
+
+	int deleteBFile(String uuid);
+
+	int selectOneFileCount(long bno);
+
+	
+
+}

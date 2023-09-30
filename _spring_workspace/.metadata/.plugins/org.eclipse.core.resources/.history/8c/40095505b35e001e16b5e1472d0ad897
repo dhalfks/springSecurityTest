@@ -1,0 +1,8 @@
+package com.ezen.myweb.service;
+
+
+public interface BoardService {
+
+	
+
+}

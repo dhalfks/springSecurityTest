@@ -1,0 +1,5 @@
+package com.ezen.myweb.ctrl;
+
+public class MemberController {
+
+}

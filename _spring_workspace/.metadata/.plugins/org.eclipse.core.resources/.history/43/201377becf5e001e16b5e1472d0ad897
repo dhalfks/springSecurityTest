@@ -1,0 +1,18 @@
+package com.ezen.myweb.repository;
+
+import java.util.List;
+
+import com.ezen.myweb.domain.BoardVO;
+import com.ezen.myweb.domain.PagingVO;
+
+public interface BoardDAO {
+
+	int insertBoard(BoardVO bvo);
+
+	long selectOneBno();
+
+	List<BoardVO> selectlistBoardPaging(PagingVO pgvo);
+
+	int selectOneTotalCount(PagingVO pgvo);
+
+}

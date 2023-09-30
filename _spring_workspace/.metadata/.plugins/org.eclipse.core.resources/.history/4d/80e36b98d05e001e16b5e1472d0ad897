@@ -1,0 +1,11 @@
+package com.ezen.myweb.repository;
+
+import com.ezen.myweb.domain.BFileVO;
+
+public interface BFileDAO {
+
+	int insertBFile(BFileVO bfvo);
+
+	
+
+}

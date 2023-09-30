@@ -1,0 +1,10 @@
+package com.ezen.myweb.repo;
+
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+
+@RunWith()
+@ContextConfiguration(classes = {com.ezen.myweb.config.RootConfig.class})
+public class BoardTest {
+
+}

@@ -1,0 +1,9 @@
+package com.ezen.myweb.config;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@ComponentScan(basePackage = {"com.ezen.myweb.ctrl","com.ezen.myweb.handler"})
+public class ServletConfiguration implements WebMvcConfigurer {
+
+}

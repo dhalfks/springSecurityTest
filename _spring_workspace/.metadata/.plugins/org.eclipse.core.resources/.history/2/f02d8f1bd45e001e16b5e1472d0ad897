@@ -1,0 +1,10 @@
+package com.ezen.myweb.domain;
+
+public class BCommentVO {
+	private long cno;
+	private long bno;
+	private String writer;
+	private String content;
+	private String regAt;
+	private String modAt;
+}

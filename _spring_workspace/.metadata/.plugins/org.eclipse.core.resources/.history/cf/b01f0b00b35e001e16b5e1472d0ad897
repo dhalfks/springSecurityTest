@@ -1,0 +1,12 @@
+package com.ezen.myweb.service;
+
+import com.ezen.myweb.domain.BoardDTO;
+
+public class BoardService {
+
+	public int register(BoardDTO boardDTO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

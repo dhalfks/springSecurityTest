@@ -1,0 +1,24 @@
+package com.ezen.myweb.repository;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.ezen.myweb.domain.BCommentVO;
+import com.ezen.myweb.domain.PagingVO;
+
+public interface BCommentDAO {
+
+	int insertBComment(BCommentVO cvo);
+
+	int selectOneBCommentTotalCount(long bno);
+
+	List<BCommentVO> selectListBComment(@Param("bno")long bno, @Param("pgvo")PagingVO pgvo);
+
+	int updateBComment(BCommentVO cvo);
+
+	long selectOneBno(long cno);
+
+	int deleteOneBComment(long cno);
+
+}

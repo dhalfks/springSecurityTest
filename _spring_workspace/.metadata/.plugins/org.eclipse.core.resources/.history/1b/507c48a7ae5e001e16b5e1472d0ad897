@@ -1,0 +1,12 @@
+package com.ezen.myweb.domain;
+
+public class BoardVO {
+	private long bno;
+	private String title;
+	private String content;
+	private String writer;
+	private String regAt;
+	private String modAt;
+	private int readCount;
+	private int cmtQty;
+}

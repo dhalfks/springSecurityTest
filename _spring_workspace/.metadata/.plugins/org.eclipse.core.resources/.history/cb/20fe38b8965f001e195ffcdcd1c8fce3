@@ -1,0 +1,43 @@
+//아이디 중복체크, 비밀번호 확인 포함
+const duplCheck = document.getElementById('dupleCheck');
+
+document.getElementById('rpwd').addEventListener('change',()=>{
+    const email = document.getElementById('email');
+    const nickName = document.getElementById('nickName');
+    const rpwd = document.getElementById('rpwd');
+    const pwd = document.getElementById('pwd');
+    document.getElementById('regBtn').disabled = true;
+    
+    if((email.value !== "" && nickName.value !== "")){
+        console.log(email.value);
+        console.log(nickName.value);
+        if(rpwd.value === pwd.value){
+            console.log(rpwd.value);
+            console.log(pwd.value);
+            document.getElementById('regBtn').disabled = false;
+        }
+    }
+});
+
+document.getElementById('dupleCheck').addEventListener('click',()=>{
+    const email = document.getElementById('email').value;
+    dupleCheckFromServer(email).then(result =>{
+        if(result==1){
+            alert("사용가능한 Email 입니다.");
+            document.getElementById('nickName').focus();
+        }else{
+            alert("다른 email 사용해주세요.")
+        }
+    })
+
+});
+
+async function dupleCheckFromServer(email){
+    try{
+        const resp = await fetch('/member/check/'+email);
+        const result = await resp.text();
+        return result;
+    }catch(err){
+        console.log(err);
+    }
+}

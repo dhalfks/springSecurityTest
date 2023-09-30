@@ -1,0 +1,9 @@
+package com.ezen.myweb.service;
+
+import com.ezen.myweb.domain.BoardDTO;
+
+public interface BoardService {
+
+	
+
+}

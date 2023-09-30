@@ -1,0 +1,20 @@
+package com.ezen.myweb.service;
+
+import org.springframework.stereotype.Service;
+
+import com.ezen.myweb.domain.BoardDTO;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+public class BoardServiceImpl implements BoardService {
+	
+	private BoardDAO bdao;
+	private BFileDAO bfdao;
+	@Override
+	public int register(BoardDTO boardDTO) {
+		return 0;
+	}
+
+}

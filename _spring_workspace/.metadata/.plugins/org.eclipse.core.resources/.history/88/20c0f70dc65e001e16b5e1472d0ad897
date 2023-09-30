@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ezen.myweb.repository.BoardDAO">
+    <insert id="insertBoard" parameterType="bvo">
+    	insert into board(title, writer,content,has_file)
+    	values (#{title}, #{writer}, #{content}, #{hasFile})
+    </insert>
+    <select id="selectOneBno" resultType="long">
+    select max(bno) from board 
+    </select>
+    <select id="selectlistBoardPaging" parameterType="pgvo" resultType="bvo">
+    	
+    </select>
+</mapper>

@@ -1,0 +1,44 @@
+package com.ezen.myweb.security;
+
+import java.util.Collection;
+import java.util.stream.Collectors;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Getter
+public class AuthMember extends User {
+	//모든 Class는 UID를 가지고 있는데 Class의 내용이 변경되면 UID값 역시 같이 바뀌어 버립니다.
+	//직렬화하여 통신하고 UID값으로 통신한게 정상인지 확인하는데 그 값이 바뀌게 되면 
+	//다른 Class로 인식을 해버리게 됩니다.
+	//이를 방지하기 위해 고유값으로 미리 명시를 해주는 부분이 바로 
+	//"private static final long serialVersionUID" 이 부분이 되게습니다.
+	private static final long serialVersionUID = 1L;
+	private MemberVO mvo;
+	
+	
+	public AuthMember(String username, String password, Collection<? extends GrantedAuthority> authorities) {
+		super(username, password, authorities);
+	}
+	
+	public AuthMember(MemberVO mvo) {
+		super(mvo.getEmail(), mvo.getPwd(), 
+				mvo.getAuthList().stream()
+				.map(authVO -> new SimpleGrantedAuthority(authVO.getAuth()))
+				.collect(Collectors.toList()));
+		this.mvo = mvo;
+	}
+
+}
+//사용자 인증을 위한 커스텀 클래스 'AuthMember' 
+//객체를 생성하는데 사용된다. 
+//이 생성자는 'MemberVO' 객체(사용자)로부터 
+//관련 정보를 추출하고, 이를 'authVO' 객체로부터 수집된 
+//사용자 권한(역할 또는 권한)과 함께 슈퍼클래스 생성자에게 전달한다. 
+//이를 통해 'AuthMember' 객체가 애플리케이션 내에서 
+//인증 및 권한 목적으로 사용될 수 있다.

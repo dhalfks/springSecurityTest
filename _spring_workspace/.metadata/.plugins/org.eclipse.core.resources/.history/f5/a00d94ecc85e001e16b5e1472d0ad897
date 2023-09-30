@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:include page="../common/header.jsp" />
+<jsp:include page="../common/nav.jsp" />
+
+<table class="table table-hover">
+ <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Writer</th>
+      <th scope="col">Read Count</th>
+      <th scope="col">Mod At</th>      
+      <th scope="col">Attched</th>      
+    </tr>
+  </thead>
+  <tbody>
+  	<c:forEach items="${list }" var="bvo">
+    <tr>
+      <th scope="row">${bvo.bno }</th>
+      <td><a href="/board/detail?bno=${bvo.bno }&pageNo=${pgn.pgvo.pageNo}&qty=${pgn.pgvo.qty}&type=${pgn.pgvo.type}&keyword=${pgn.pgvo.keyword}">${bvo.title }</a></td>
+      <td>${bvo.writer } 
+      <c:if test="${bvo.cmtQty > 0 }">
+      <span class="badge rounded-pill bg-info">${bvo.cmtQty }</span>
+      </c:if>
+      </td>
+      <td>${bvo.readCount }</td>
+      <td>${bvo.modAt }</td>
+      <td><c:if test="${bvo.hasFile gt 0 }">
+      	Y <!-- 파일이 첨부되어 있다는 이모티콘을 설정 -->
+      </c:if></td>
+    </tr>
+    </c:forEach>    
+  </tbody>
+</table>
+
+
+<jsp:include page="../common/footer.jsp" />

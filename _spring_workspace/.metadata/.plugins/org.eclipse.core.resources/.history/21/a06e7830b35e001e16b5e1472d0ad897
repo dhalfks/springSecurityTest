@@ -1,0 +1,16 @@
+package com.ezen.myweb.service;
+
+import org.springframework.stereotype.Service;
+
+import com.ezen.myweb.domain.BoardDTO;
+
+@Service
+public class BoardServiceImpl implements BoardService {
+
+	@Override
+	public int register(BoardDTO boardDTO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

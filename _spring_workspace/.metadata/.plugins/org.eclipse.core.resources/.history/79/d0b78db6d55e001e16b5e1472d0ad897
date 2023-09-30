@@ -1,0 +1,11 @@
+package com.ezen.myweb.repository;
+
+import com.ezen.myweb.domain.BCommentVO;
+
+public interface BCommentDAO {
+
+	int insertBComment(BCommentVO cvo);
+
+	int selectOneBCommentTotalCount(long bno);
+
+}

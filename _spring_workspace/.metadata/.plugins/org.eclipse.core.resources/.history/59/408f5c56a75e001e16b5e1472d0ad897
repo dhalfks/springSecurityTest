@@ -1,0 +1,21 @@
+package com.ezen.myweb.config;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+
+@EnableWebMvc
+@ComponentScan(basePackages = {"com.ezen.myweb.ctrl","com.ezen.myweb.handler"})
+public class ServletConfiguration implements WebMvcConfigurer {
+
+	public void addResourceHandlers(ResourceHandlerRegistry registery) {
+		registery.addResourceHandler("/resources/**")
+				.addResourceLocations("/resources/");
+		registery.addResourceHandler("/upload/**")
+				.addResourceLocations("file:///C:/_javaweb/_java/fileUpload/");
+		
+	}
+}

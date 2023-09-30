@@ -1,0 +1,48 @@
+package com.ezen.myweb.service;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import com.ezen.myweb.domain.BCommentVO;
+import com.ezen.myweb.domain.PagingVO;
+import com.ezen.myweb.handler.PagingHandler;
+import com.ezen.myweb.repository.BCommentDAO;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+public class BCommentServiceImpl implements BCommentService {
+	
+	@Inject
+	private BCommentDAO cdao;
+	
+	private BoardDAO bdao;
+	
+	@Override
+	public int register(BCommentVO cvo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public PagingHandler getList(long bno, PagingVO pgvo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int modify(BCommentVO cvo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int remove(long cno) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+}

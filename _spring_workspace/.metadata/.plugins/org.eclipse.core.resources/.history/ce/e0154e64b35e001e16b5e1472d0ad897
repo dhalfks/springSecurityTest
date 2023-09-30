@@ -1,0 +1,29 @@
+package com.ezen.myweb.service;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.ezen.myweb.domain.BoardDTO;
+import com.ezen.myweb.repository.BFileDAO;
+import com.ezen.myweb.repository.BoardDAO;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+public class BoardServiceImpl implements BoardService {
+	
+	@Inject
+	private BoardDAO bdao;
+	@Inject
+	private BFileDAO bfdao;
+	
+	@Transactional
+	@Override
+	public int register(BoardDTO bdto) {
+		return 0;
+	}
+
+}

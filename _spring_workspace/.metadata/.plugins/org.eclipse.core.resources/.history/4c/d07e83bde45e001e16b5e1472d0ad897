@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.ezen.myweb.repository.BFileDAO">
+  	<insert id="insertBFile" parameterType="bfvo">
+		insert into b_file (uuid, save_dir, file_name, file_type, bno, file_size)
+		values (#{uuid}, #{saveDir}, #{fileName}, #{fileType}, #{bno}, #{fileSize})		
+	</insert>
+	<select id="selectListBFile" parameterType="long" resultType="bfvo">
+		select * from b_file where bno = #{bno}
+	</select>
+	<select id="selectOneBno" parameterType="string" resultType="long">
+		select bno from b_file where uuid = #{uuid}
+	</select>
+	<delete id="deleteBFile" parameterType="string">
+		delete from b_file where uuid = #{uuid}
+	</delete>
+	<select id="selectOneFileCount" >
+		select count(uuid) from b_file where uuid = #{uuid}
+	</select>
+  </mapper>

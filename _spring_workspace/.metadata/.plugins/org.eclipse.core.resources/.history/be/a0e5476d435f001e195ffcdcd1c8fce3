@@ -1,0 +1,9 @@
+package com.ezen.myweb.repository;
+
+import com.ezen.myweb.security.MemberVO;
+
+public interface MemberDAO {
+
+	MemberVO selectEmail(String username);
+
+}

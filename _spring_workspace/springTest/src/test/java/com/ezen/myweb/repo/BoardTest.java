@@ -1,0 +1,35 @@
+package com.ezen.myweb.repo;
+
+import javax.inject.Inject;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.ezen.myweb.domain.BoardVO;
+import com.ezen.myweb.repository.BoardDAO;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = {com.ezen.myweb.config.RootConfig.class})
+public class BoardTest {
+
+	@Inject
+	private BoardDAO bdao;
+	
+	@Test
+	public void insertBoardTest() throws Exception {
+		BoardVO bvo = new BoardVO();
+		bvo.setBno(1L);
+		bvo.setTitle("Test Title");
+		bvo.setContent("Test Content");
+		bvo.setWriter("Test Writer");
+		
+		int isUp = bdao.insertBoard(bvo);
+		log.debug(">>> isUp > {}", isUp);
+	}
+	
+}

@@ -1,0 +1,23 @@
+package com.ezen.myweb.service;
+
+import org.springframework.stereotype.Service;
+
+import com.ezen.myweb.domain.BCommentVO;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+public class BCommentServiceImpl implements BCommentService {
+	
+	@Inject
+	private BCommentDAO cdao;
+	
+	@Override
+	public int register(BCommentVO cvo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+}
